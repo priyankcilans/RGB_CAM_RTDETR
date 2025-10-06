@@ -1,0 +1,59 @@
+{
+  "paths": {
+    "video_path": "D:\\Cilans\\supervision\\test.mp4",
+    "depth_path": null,
+    "model_name": "rtdetr-l.pt",
+    "output_video_path": "annotated_tracking_output.mp4",
+    "framewise_excel": "object_tracking_framewise.xlsx",
+    "summary_excel": "object_speeds_depth.xlsx"
+  },
+  "camera": {
+    "position": {
+      "latitude": 30.40007260,
+      "longitude": -84.23239334,
+      "altitude": 5.21474028
+    },
+    "orientation": {
+      "facing_degrees": 323.19,
+      "pitch_degrees": 17.1,
+      "roll_degrees": 4.54,
+      "calibration_yaw_degrees": 290.0
+    },
+    "field_of_view": {
+      "horizontal_degrees": 40.1,
+      "vertical_degrees": 23.4
+    }
+  },
+  "detection": {
+    "track_classes": [0, 1, 2, 3, 5, 7],
+    "class_names": {
+      "0": "PERSON",
+      "1": "BICYCLE",
+      "2": "CAR",
+      "3": "MOTORCYCLE",
+      "5": "BUS",
+      "7": "TRUCK"
+    },
+    "confidence_threshold": 0.70,
+    "nms_iou_threshold": 0.45,
+    "min_bbox_area": 400
+  },
+
+  "tracking": {
+    "tracker_type": "botsort.yaml",
+    "speed_calculation_window": 5,
+    "with_reid": true,
+    "reid_model_path": "osnet_x0_25_msmt17.pt"
+  },
+  "display": {
+    "show_direction": true,
+    "show_speed": true,
+    "show_latlon": true,
+    "show_id": true,
+    "show_class": true
+  },
+  "output": {
+    "save_video": true,
+    "save_framewise": true
+  }
+}
